@@ -19,19 +19,13 @@ public class FakeEmailService implements EmailService {
   public void sendSimpleMessage(String from, String to, String message) {
     LOGGER.info("[Mail] email sent to -> {}", to);
     LOGGER.info(
-        "----------------------------------------- Simple Message Mail Sent -----------------------------------------");
-    LOGGER.info("From: " + from);
-    LOGGER.info("To: " + to);
-    LOGGER.info("Message: " + message);
+        "----------------------------------------- Simple Message Mail Sent -----------------------------------------\n From: {}\nTo: {}\nMessage: {}",from,to,message);
   }
 
   @Override
   public void sendMessageUsingThymeleafTemplate(
       String to, String subject, Map<String, Object> templateModel) {
     LOGGER.info("[Mail] email sent to -> {}", to);
-    LOGGER.info(
-        "----------------------------------------- Send Message with thymleaf -----------------------------------------");
-    LOGGER.info("To: " + to);
-    LOGGER.info("Subject: " + subject);
+    LOGGER.info("----------------------------------------- Send Message with thymleaf ----------------------------------------- \n To: {} \n Subject: {}", to, subject);
   }
 }
